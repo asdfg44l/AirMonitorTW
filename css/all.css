@@ -1,0 +1,348 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Microsoft JhengHei", "Segoe UI","Roboto";
+}
+
+.clearfix {
+  clear: both;
+}
+
+.wrap {
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+}
+
+.navbar {
+  margin: 0 auto 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.navbar .placeSelector {
+  margin: 1%;
+  line-height: 1.4em;
+}
+
+.navbar .placeSelector h2 {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 10px 0px;
+  margin: 10px 0px;
+}
+
+.navbar .placeSelector select {
+  width: 100%;
+  padding: 10px 0px;
+  border: 2px solid #000;
+  font-weight: bold;
+}
+
+.navbar .degreeTable {
+  padding: 10px 0px;
+  margin: 1%;
+}
+
+.navbar .degreeTable td, .navbar .degreeTable th {
+  font-weight: bold;
+  border: 2px solid #000;
+  width: 16.6666%;
+  height: 50%;
+  text-align: center;
+  padding: 10px;
+}
+
+.dataInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+}
+
+.dataInfo .location {
+  font-size: 32px;
+}
+
+.dataInfo .line {
+  width: 70%;
+  height: 0;
+  margin: 15px;
+  border-top: 4px dotted #000;
+}
+
+.dataInfo .time {
+  line-height: 30px;
+}
+
+.airInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.airInfo .infoDetail {
+  width: 35%;
+  font-weight: bold;
+}
+
+.airInfo .infoDetail .detail {
+  width: 80%;
+  margin: 20px;
+  border: 2px solid #000;
+}
+
+.airInfo .infoDetail .detail tr {
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 20px;
+  border-bottom: 2px solid #000;
+}
+
+.airInfo .infoDetail .detail tr:last-child {
+  border: none;
+}
+
+.airInfo .infoDetail .detail td {
+  padding: 15px;
+}
+
+.airInfo .infoDetail .detail td span {
+  font-size: 12px;
+}
+
+.airInfo .infoDetail .detail td sub {
+  vertical-align: bottom;
+  font-size: 8px;
+}
+
+.airInfo .infoDetail .detail .number {
+  float: right;
+}
+
+.airInfo .infoDetail .detail .detailTitle {
+  margin: 0;
+}
+
+.airInfo .infoDetail .detail .detailTitle td {
+  border-right: 2px solid #000;
+  width: 60%;
+  font-size: 32px;
+  text-align: center;
+}
+
+.airInfo .infoDetail .detail .detailTitle .AQI {
+  border: none;
+}
+
+.airInfo .infoTable {
+  width: 60%;
+}
+
+.airInfo .infoTable .infoList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.airInfo .infoTable .infoList li {
+  margin: 2%;
+}
+
+.airInfo .infoTable .infoList li:hover {
+  position: relative;
+  top: 2px;
+}
+
+.airInfo .infoTable .infoBox {
+  margin: 0%;
+}
+
+.infoBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5% 7.4%;
+  width: 300px;
+  text-decoration: none;
+  border: 2px solid #000;
+}
+
+.infoBox .innerBox {
+  display: block;
+  padding: 6% 0px;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+}
+
+.infoBox .place {
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-right: 2px solid #000;
+  width: 60%;
+}
+
+.infoBox .place:hover {
+  background-color: #dee0d9;
+}
+
+.infoBox .AQI {
+  width: 40%;
+}
+
+.footer {
+  background: #000;
+  padding: 10px 20px;
+}
+
+.footer p {
+  color: #fff;
+  float: left;
+}
+
+.footer .copyright {
+  float: right;
+}
+
+.loading {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  bottom: -20px;
+  right: 0;
+  z-index: 100;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(105, 240, 174, 0.5)), to(rgba(105, 240, 174, 0.5))), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background-image: linear-gradient(rgba(105, 240, 174, 0.5), rgba(105, 240, 174, 0.5)), linear-gradient(#fff, #fff);
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  margin: 6px;
+  border: 6px solid #000;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #49beb7 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=all.css.map */
