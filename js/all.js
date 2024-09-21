@@ -19,13 +19,15 @@ infoList.addEventListener('click',function(e){
     }else{return};
 });
 //catch data
-var url='https://script.google.com/macros/s/AKfycbysO5ektpVfu6f1dqVygmD8l8QGaOthc5GFPWsv17YM4YP3hGw/exec?url=http://opendata.epa.gov.tw/webapi/Data/REWIQA/?format=json';
+var url='https://data.moenv.gov.tw/api/v2/aqx_p_432?api_key=fb961fa0-9fb5-4ff4-ac24-f2926ebe10de';
 
 fetch(url,{})
   .then((response)=>{
       return response.json();
 }).then((data)=>{
-   getData(data);        //save data
+  console.log(data.records);
+  
+   getData(data.records);        //save data
    updateAll('新北市');  //更新所有頁面 ( datail, infoList) 
 }).then(()=>{
    loading.style.display='none';  //待資料渲染至頁面後，關閉 loading page
@@ -66,13 +68,13 @@ for(let i=0;i<degree.children.length;i++){
 //儲存資料，並將地點存入新陣列中
 var datalist;
 function getData(data){
-    datalist=data;
-    let location= new Set();
-    for(let i=0;i<datalist.length;i++){
-      location.add(datalist[i].County)
-    };
-    addInSelect(location);    //將地點加入選單
+  datalist=data;
+  let location= new Set();
+  for(let i=0;i<datalist.length;i++){
+    location.add(datalist[i].county)
   };
+  addInSelect(location);    //將地點加入選單
+};
 //將地點加入選單中
 function addInSelect(location){
     location.forEach(element => {
@@ -87,17 +89,17 @@ function addInSelect(location){
 function updataDetail(place){
     
     datalist.find((item)=>{
-        if(item.SiteName == place){
+        if(item.sitename == place){
             //將各項空污指標存入陣列中
             let data=[]
-            data.push(item.O3,item.PM10,item['PM2.5'],item.CO,item.SO2,item.NO2);
+            data.push(item.o3,item.pm10,item['pm2.5'],item.co,item.so2,item.no2);
             //更新 detailTitle
             detailTitle.children[0].innerHTML=place;  //更新地點
-            detailTitle.children[1].innerHTML=item.AQI; //更新分數
+            detailTitle.children[1].innerHTML=item.aqi; //更新分數
 
             //上色
             let colorList=colors.find((el)=>{
-                       if(el.status == item.Status){
+                       if(el.status == item.status){
                            return el;
                        }
             });
@@ -116,26 +118,26 @@ function updateAll(location){
     //更新標題
     placeTitle.innerHTML=location;
     //更新時間
-    time.innerHTML=datalist[0].PublishTime+' 更新';   
+    time.innerHTML=datalist[0].publishtime+' 更新';   
     //清空 infoList
     infoList.innerHTML='';
     //更新 infoList
     let data=datalist.filter((item) =>{
-        if(item.County == location){
+        if(item.county == location){
             return item;
         }
     });
-    //以 AQI 由大到小排序 
+    //以 aqi 由大到小排序 
     let sortedData=data.sort((a,b) =>{
-        let x=a.AQI;
-        let y=b.AQI;
+        let x=a.api;
+        let y=b.aqi;
         return y-x;
     })
     
     sortedData.forEach((el) =>{
         let newList=document.createElement('li');
 
-        if(el.AQI == '' | el.AQI == '-'){el.AQI='N/A'};
+        if(el.aqi == '' | el.aqi == '-'){el.aqi='N/A'};
         //上色
         let colorList=colors.find((col)=>{
             if(col.status == el.Status){
@@ -148,8 +150,8 @@ function updateAll(location){
         }
         //組字串並更新
         let str=`<div class="infoBox">
-                     <a href='#' class="place innerBox">${el.SiteName}</a>
-                     <div class="AQI innerBox" style="background-color:${colorList.color}">${el.AQI}</div>
+                     <a href='#' class="place innerBox">${el.sitename}</a>
+                     <div class="aqi innerBox" style="background-color:${colorList.color}">${el.aqi}</div>
                  </div>`;
         newList.innerHTML=str;
         
@@ -157,6 +159,8 @@ function updateAll(location){
         
     });
     //更新 detail
-    updataDetail(sortedData[0].SiteName);
+    console.log('sortedData', sortedData);
+    
+    updataDetail(sortedData[0].sitename);
 
 }

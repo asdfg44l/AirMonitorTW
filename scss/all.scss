@@ -1,7 +1,13 @@
 @import 'reset';
 
 body{
-    font-family: "Microsoft JhengHei", "Segoe UI","Roboto"
+    font-family: "Microsoft JhengHei", "Segoe UI","Roboto";
+}
+#app {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 100vh;
 }
 .clearfix{
     clear: both;

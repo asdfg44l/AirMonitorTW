@@ -6,94 +6,96 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Air detector</title>
 
-  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="scss/all.css">
 </head>
 <body>
+  <div id="app">
   <!--loading page-->
-   <div class="loading">
-      <div class="loading_wrap">
-          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-      </div>
-   </div>
-   <div class="wrap">
-     <div class="navbar">
-       <div class="placeSelector">
-         <h2>空氣標準指標 (AQI)</h2>
-         <select name="location" id="location"'>
-           <option >請選擇縣市</option>
-         </select>
-       </div>
-       <div class="degreeTable">
-         <table>
-           <tr class="degree">
-             <th>0~50</th>
-             <th>51~100</th>
-             <th>101~150</th>
-             <th>151~200</th>
-             <th>201~300</th>
-             <th>301~400</th>
-           </tr>
-           <div class="description">
-             <td>很好</td>
-             <td>普通</td>
-             <td>對敏感族群不健康</td>
-             <td>對所有族群不健康</td>
-             <td>非常不健康</td>
-             <td>危害</td>
-           </div>
-         </table>
-       </div>
-     </div>
-     <div class="dataInfo">
-       <h2 class="location"></h2>
-       <div class="line"></div>
-       <p class="time"></p>
-     </div>
-     <div class="airInfo">
-       <div class="infoDetail">
-          <table class="detail">
-            <tr class="detailTitle">
-              <td></td>
-              <td class="AQI"></td>
+    <div class="loading">
+        <div class="loading_wrap">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    <div class="wrap">
+      <div class="navbar">
+        <div class="placeSelector">
+          <h2>空氣標準指標 (AQI)</h2>
+          <select name="location" id="location"'>
+            <option >請選擇縣市</option>
+          </select>
+        </div>
+        <div class="degreeTable">
+          <table>
+            <tr class="degree">
+              <th>0~50</th>
+              <th>51~100</th>
+              <th>101~150</th>
+              <th>151~200</th>
+              <th>201~300</th>
+              <th>301~400</th>
             </tr>
-            <tr>
-              <td>臭氧 <span>O<sub>3</sub> (ppb)</span></td>
-              <td class="number"></td>
-            </tr>
-            <tr>
-              <td>懸浮微粒 <span>PM<sub>10</sub> (μg/m3)</span></td>
-              <td class="number"></td>
-            </tr>
-            <tr>
-              <td>細懸浮微粒 <span>PM<sub>2.5</sub> (μg/m3)</span></td>
-              <td class="number"></td>
-            </tr>
-            <tr>
-              <td>一氧化碳 <span>CO (ppm)</span></td>
-              <td class="number"></td>
-            </tr>
-            <tr>
-              <td>二氧化硫 <span>SO<sub>2</sub> (ppb)</span></td>
-              <td class="number"></td>
-            </tr>
-            <tr>
-              <td>二氧化氮 <span>NO<sub>2</sub> (ppb)</span></td>
-              <td class="number"></td>
-            </tr>
+            <div class="description">
+              <td>很好</td>
+              <td>普通</td>
+              <td>對敏感族群不健康</td>
+              <td>對所有族群不健康</td>
+              <td>非常不健康</td>
+              <td>危害</td>
+            </div>
           </table>
-       </div>
-       <div class="infoTable">
-         <ul class="infoList"></ul>
-       </div>
+        </div>
       </div>
-   </div> 
-   <div class="footer">
-     <p>資料來源 : 行政院環境保護署</p>
-     <p class="copyright">
-      Copyright © 2019 HexSchool. All rights reserved.
-     </p>
-     <div class="clearfix"></div>
-   </div>
-   <script src="js/all.js"></script>
+      <div class="dataInfo">
+        <h2 class="location"></h2>
+        <div class="line"></div>
+        <p class="time"></p>
+      </div>
+      <div class="airInfo">
+        <div class="infoDetail">
+            <table class="detail">
+              <tr class="detailTitle">
+                <td></td>
+                <td class="AQI"></td>
+              </tr>
+              <tr>
+                <td>臭氧 <span>O<sub>3</sub> (ppb)</span></td>
+                <td class="number"></td>
+              </tr>
+              <tr>
+                <td>懸浮微粒 <span>PM<sub>10</sub> (μg/m3)</span></td>
+                <td class="number"></td>
+              </tr>
+              <tr>
+                <td>細懸浮微粒 <span>PM<sub>2.5</sub> (μg/m3)</span></td>
+                <td class="number"></td>
+              </tr>
+              <tr>
+                <td>一氧化碳 <span>CO (ppm)</span></td>
+                <td class="number"></td>
+              </tr>
+              <tr>
+                <td>二氧化硫 <span>SO<sub>2</sub> (ppb)</span></td>
+                <td class="number"></td>
+              </tr>
+              <tr>
+                <td>二氧化氮 <span>NO<sub>2</sub> (ppb)</span></td>
+                <td class="number"></td>
+              </tr>
+            </table>
+        </div>
+        <div class="infoTable">
+          <ul class="infoList"></ul>
+        </div>
+        </div>
+    </div> 
+    <div class="footer">
+      <p>資料來源 : 行政院環境保護署</p>
+      <p class="copyright">
+        Copyright © 2019 HexSchool. All rights reserved.
+      </p>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <script src="js/all.js"></script>
 </body>
 </html>
